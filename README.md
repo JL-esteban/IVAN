@@ -1,3 +1,9 @@
+Proyecto hecho por las siguientes personas:
+- Jose Esteban Lopez Montoya
+- Alejandro Rodriguez Cortès
+- Duberney Campo Tabares
+- Felipe Ramirez Satizabal
+
 En este github mostramos las conexiones, codigos tanto en arduino como en ros2, tambien simulación en RViz, que nos llevo a fformular este proyecto?, a quien no le gustaria controlar algo con solo el mover de sus manos?, que sea algo entretenido a la hora de sus terapias de recuperacion?, que las personas lo puedan usar tanto a la hora de su terapia como un juguete.
 
 Así que comenzamos, tenemos de la siguiente fora su conexión y la cantidad de objetos,componentes,baterias y microchips que usamos.
@@ -83,6 +89,7 @@ python3 bmi_to_boat_control.py --ros-args -p esp32_ip:=192.168.4.1
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/9bf23261-350b-44c3-a943-137fd867ff90" />
 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/8ee88e2e-455d-4cba-9380-97dc207197f7" />
+
 
 
 
