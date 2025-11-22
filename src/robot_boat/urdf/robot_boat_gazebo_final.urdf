@@ -1,0 +1,165 @@
+<robot name="robot_boat">
+  
+  <link name="caja">
+    <inertial>
+      <origin xyz="-0.00350655617226021 0.0057870557154398 0.100314646324909" rpy="0 0 0" />
+      <mass value="0.315668074424316" />
+      <inertia ixx="0.00106952247168509" ixy="-6.35663584540256E-08" ixz="4.48722793894617E-07" iyy="0.00147003359417461" iyz="1.732567854706E-06" izz="0.000700072373673693" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/caja.STL"/>
+      </geometry>
+      <material name="azul_claro">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/caja.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="ganchos">
+    <inertial>
+      <origin xyz="-0.0508333333333334 -1.76145864720992E-05 -0.06" rpy="0 0 0" />
+      <mass value="0.0107011061266654" />
+      <inertia ixx="1.31036565577676E-06" ixy="1.52182167501141E-22" ixz="4.74293249589487E-24" iyy="3.76232518888044E-07" iyz="5.31604809467197E-23" izz="1.42091384800796E-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/ganchos.STL"/>
+      </geometry>
+      <material name="rojo">
+        <color rgba="1 0.168627450980392 0.168627450980392 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/ganchos.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="ganchos" type="fixed">
+    <origin xyz="0.056509 -0.03 0.039668" rpy="1.5708 0 1.5708" />
+    <parent link="caja"/>
+    <child link="ganchos"/>
+  </joint>
+
+  <link name="cabeza">
+    <inertial>
+      <origin xyz="-1.47210003906893E-05 0.0334212800408631 -1.71087868535286E-05" rpy="0 0 0" />
+      <mass value="0.195566086436615" />
+      <inertia ixx="0.000521416706885964" ixy="-3.28003379479109E-08" ixz="4.29670857435128E-08" iyy="0.000848517982242861" iyz="-6.74994053841756E-08" izz="0.000443795962264069" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/cabeza.STL"/>
+      </geometry>
+      <material name="azul_claro">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/cabeza.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="cabeza" type="fixed">
+    <origin xyz="-0.07 0.01 -0.06" rpy="0 1.5707963267949 0" />
+    <parent link="ganchos"/>
+    <child link="cabeza"/>
+  </joint>
+
+  <link name="punta">
+    <inertial>
+      <origin xyz="3.27284758360044E-06 -0.00433760804571402 0.0273160015482659" rpy="0 0 0" />
+      <mass value="0.0716405181094412" />
+      <inertia ixx="5.44743781091978E-05" ixy="1.86774753169867E-09" ixz="6.76801340593279E-09" iyy="9.58237376978415E-05" iyz="-6.17934926455551E-06" izz="0.000101029420324114" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/punta.STL"/>
+      </geometry>
+      <material name="naranja">
+        <color rgba="1 0.549019607843137 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/punta.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="punta" type="fixed">
+    <origin xyz="-0.0034915 0.02 0.018168" rpy="1.5708 0 0" />
+    <parent link="caja"/>
+    <child link="punta"/>
+  </joint>
+
+  <link name="motor1">
+    <inertial>
+      <origin xyz="0.0248078639783107 0 0" rpy="0 0 0" />
+      <mass value="0.0338272475621472" />
+      <inertia ixx="3.59775886940148E-06" ixy="-8.70714672756417E-24" ixz="-9.65307491393635E-22" iyy="1.02720341448678E-05" iyz="0" izz="1.02720341448678E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/motor1.STL"/>
+      </geometry>
+      <material name="gris_claro">
+        <color rgba="0.796078431372549 0.823529411764706 0.937254901960784 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/motor1.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="motor1" type="continuous">
+    <origin xyz="-0.04 -0.12 0.02" rpy="0 1.5708 0" />
+    <parent link="caja"/>
+    <child link="motor1"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="10.0" velocity="10.0"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <link name="motor2">
+    <inertial>
+      <origin xyz="0.0248078639783108 -6.93889390390723E-18 0" rpy="0 0 0" />
+      <mass value="0.0338272475621472" />
+      <inertia ixx="3.59775886940148E-06" ixy="3.03672443546408E-22" ixz="-1.21326837735656E-21" iyy="1.02720341448678E-05" iyz="0" izz="1.02720341448678E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/motor2.STL"/>
+      </geometry>
+      <material name="gris_claro">
+        <color rgba="0.796078431372549 0.823529411764706 0.937254901960784 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_boat/meshes/motor2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="motor2" type="continuous">
+    <origin xyz="0.04 -0.12 0.02" rpy="0 1.5708 0" />
+    <parent link="caja"/>
+    <child link="motor2"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="10.0" velocity="10.0"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+</robot>

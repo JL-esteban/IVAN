@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_boat_simple">
+  <link
+    name="caja">
+    <inertial>
+      <origin
+        xyz="0.0674088250200049 -0.229107086709065 0.0869499659473606"
+        rpy="0 0 0" />
+      <mass
+        value="0.593575785097037" />
+      <inertia
+        ixx="0.00164683447052826"
+        ixy="-4.98457893042727E-07"
+        ixz="-2.88982729740066E-08"
+        iyy="0.00124620812191765"
+        iyz="4.37928200446627E-06"
+        izz="0.0024147515466342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/caja.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/caja.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor1">
+    <inertial>
+      <origin
+        xyz="0.172573670737875 -0.227745458135946 0.0379154286831428"
+        rpy="0 0 0" />
+      <mass
+        value="0.0338272475621472" />
+      <inertia
+        ixx="3.59775886940147E-06"
+        ixy="1.33747826147588E-21"
+        ixz="-1.4152161817721E-21"
+        iyy="1.02720341448678E-05"
+        iyz="0"
+        izz="1.02720341448678E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/motor1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/motor1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor1"
+    type="prismatic">
+    <origin
+      xyz="-0.078491 -0.1107 0.017262"
+      rpy="-2.6816 0 -1.5708" />
+    <parent
+      link="caja" />
+    <child
+      link="motor1" />
+    <axis
+      xyz="0 0.44397 0.89604" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="motor2">
+    <inertial>
+      <origin
+        xyz="0.172573670735101 0.0900437999823295 0.0386318147464088"
+        rpy="0 0 0" />
+      <mass
+        value="0.0338272475621472" />
+      <inertia
+        ixx="3.59775886940148E-06"
+        ixy="8.9047476417326E-22"
+        ixz="1.46990538215685E-21"
+        iyy="1.02720341448678E-05"
+        iyz="-1.6940658945086E-21"
+        izz="1.02720341448678E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/motor2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_boat_simple/meshes/motor2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor2"
+    type="prismatic">
+    <origin
+      xyz="0.071509 -0.1107 0.015797"
+      rpy="2.105 0 -1.5708" />
+    <parent
+      link="caja" />
+    <child
+      link="motor2" />
+    <axis
+      xyz="0 0.86066 -0.50917" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

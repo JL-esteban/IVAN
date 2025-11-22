@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "Capacitor_100uF_25V")(type "KiCad")(uri "${KIPRJMOD}/Capacitor_100uF_25V.pretty")(options "")(descr ""))
+  (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/Capacitor_100uF_25V.pretty/Library.pretty")(options "")(descr ""))
+  (lib (name "capacitor_100uF")(type "KiCad")(uri "${KIPRJMOD}/capacitor_100uF.pretty")(options "")(descr ""))
+)

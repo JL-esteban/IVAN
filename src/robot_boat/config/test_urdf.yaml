@@ -1,0 +1,32 @@
+robot_state_publisher:
+  ros__parameters:
+    robot_description: |
+      <?xml version="1.0"?>
+      <robot name="robot_boat">
+        <link name="caja">
+          <visual>
+            <geometry>
+              <mesh filename="package://robot_boat/meshes/caja.STL"/>
+            </geometry>
+            <material name="">
+              <color rgba="0.792 0.819 0.933 1"/>
+            </material>
+          </visual>
+        </link>
+        <link name="ganchos">
+          <visual>
+            <geometry>
+              <mesh filename="package://robot_boat/meshes/ganchos.STL"/>
+            </geometry>
+            <material name="">
+              <color rgba="1 0.168 0.168 1"/>
+            </material>
+          </visual>
+        </link>
+        <joint name="ganchos_joint" type="fixed">
+          <origin xyz="0.056509 -0.03 0.039668" rpy="1.5708 0 1.5708"/>
+          <parent link="caja"/>
+          <child link="ganchos"/>
+        </joint>
+      </robot>
+    use_sim_time: false
